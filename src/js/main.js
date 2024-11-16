@@ -1,20 +1,23 @@
-// Import the Toolbar class from the Toolbar.js file
 import { Toolbar } from './components/Toolbar.js';
+import { ToggleButton } from './components/ToggleButton.js';
+import { Icons } from './components/Icons.js';
 
-// Create a new Toolbar instance
-// 'window' is the global object in the browser
-window.toolbar = new Toolbar();
+// Create instances
+const toolbar = new Toolbar();
+const toggleButton = new ToggleButton(() => {
+    if (toolbar.container.innerHTML) {
+        toolbar.hide();
+    } else {
+        toolbar.render();
+    }
+});
 
-// Show the toolbar
-function showToolbar() {
-    window.toolbar.render();
-}
+// Show toggle button when pressing 'T' key
+document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 't') {
+        toggleButton.toggle();
+    }
+});
 
-// Hide the toolbar
-function hideToolbar() {
-    window.toolbar.hide();
-}   
-
-// Make functions available globally so they can be used in the HTML
-window.showToolbar = showToolbar;
-window.hideToolbar = hideToolbar;
+// Show toolbar initially
+toolbar.render();
