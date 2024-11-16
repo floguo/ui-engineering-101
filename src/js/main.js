@@ -21,5 +21,5 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Show toolbar initially
-toolbar.render();
+// toolbar.render();
 emptyState.render();
