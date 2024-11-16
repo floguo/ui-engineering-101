@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toolbar Demo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <!-- Container for components -->
-    <div id="app"></div>
+// Define the Toolbar class, which renders toolbar and hides it
+export class Toolbar {
+    // Constructor to initialize the container
+    // Constructor method is called when an object is created
+    // containerId defaults to 'app'
+    constructor(containerId = 'app') {
+        // Finds and stores the container element
+        this.container = document.getElementById(containerId);
+    }
 
-    <!-- Hidden toggle button -->
-    <button 
-        id="toggleButton"
-        onclick="toggleToolbar()" 
-        class="fixed top-4 left-4 bg-blue-500 text-white px-4 py-2 rounded hidden">
-        Toggle Toolbar
-    </button>
-
-     <script>
+    // Method to render the toolbar
+    render() {
+        // HTML string for the toolbar
         const toolbar = `
              <div class="w-full h-screen relative">
         <div class="absolute bg-black/90 flex items-center gap-1.5 p-1.5 px-1.5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-[0px 16px 32px -8px rgba(0, 0, 0, 0.24)]">
@@ -58,25 +50,12 @@
                 </div>
             </div>
         `;
-
-        // Toggle toolbar
-        function toggleToolbar() {
-            // Get the container element
-            const app = document.getElementById('app');
-            // Toggle the toolbar content using a ternary operator
-            app.innerHTML = app.innerHTML ? '' : toolbar;
-        }
         
-        // Show toggle button when pressing 'T' key
-        document.addEventListener('keydown', (e) => {
-            if (e.key.toLowerCase() === 't') {
-                const button = document.getElementById('toggleButton');
-                button.classList.toggle('hidden');
-            }
-        });
+        // 
+        this.container.innerHTML = toolbar;
+    }
 
-        // Show toolbar immediately
-        toggleToolbar();
-    </script>
-</body>
-</html>
+    hide() {
+        this.container.innerHTML = '';
+    }
+} 
