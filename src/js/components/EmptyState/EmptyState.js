@@ -1,4 +1,4 @@
-
+import { Icons } from "../Icons.js";
 export class EmptyState {
     constructor() {
         this.container = document.getElementById('empty-state');
@@ -11,9 +11,15 @@ export class EmptyState {
                 rounded-xl p-14 isolate
                 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <div class="flex justify-center">
-                    <div class="bg-white border border-[#ECECEC] size-12 rounded-xl relative left-2 top-2 -rotate-6"></div>
-                    <div class="bg-white border border-[#ECECEC] size-12 rounded-xl z-10"></div>
-                    <div class="bg-white border border-[#ECECEC] size-12 rounded-xl relative right-2 top-2 rotate-6"></div>
+                    <div class="grid place-items-center bg-white border border-[#ECECEC] size-12 rounded-xl relative left-2 top-2 -rotate-6">
+                        ${Icons.calendar}
+                    </div>
+                    <div class="grid place-items-center bg-white border border-[#ECECEC] size-12 rounded-xl z-10">
+                        ${Icons.chainLink}
+                    </div>
+                    <div class="grid place-items-center bg-white border border-[#ECECEC] size-12 rounded-xl relative right-2 top-2 rotate-6">
+                        ${Icons.code}
+                    </div>
                 </div>
                 <h2 class="text-gray-900 font-medium mt-6">No Forms Created</h2>
                 <p class="text-sm text-gray-500 mt-1">You can create a new template to add in your pages.</p>
