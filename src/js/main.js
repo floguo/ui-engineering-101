@@ -1,5 +1,5 @@
-import { Toolbar } from './components/Toolbar.js';
-import { ToggleButton } from './components/ToggleButton.js';
+import { Toolbar } from './components/Toolbar/Toolbar.js';
+import { ToggleButton } from './components/Toolbar/ToggleButton.js';
 import { Icons } from './components/Icons.js';
 
 // Create instances

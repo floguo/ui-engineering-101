@@ -1,5 +1,5 @@
 import { ToolbarButton } from './ToolbarButton.js';
-import { Icons } from './Icons.js';
+import { Icons } from '../Icons.js';
 
 export class Toolbar {
     constructor() {
