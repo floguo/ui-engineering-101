@@ -1,3 +1,4 @@
+
 export class EmptyState {
     constructor() {
         this.container = document.getElementById('empty-state');
