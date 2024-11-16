@@ -4,7 +4,7 @@ export class ToggleButton {
         this.button.id = 'toggleButton';
         this.button.onclick = onClick;
         this.button.className = 'fixed top-4 left-4 bg-blue-500 text-white px-4 py-2 rounded hidden';
-        this.button.textContent = 'Toggle Toolbar';
+        this.button.textContent = 'Toggle';
         
         document.body.appendChild(this.button);
     }

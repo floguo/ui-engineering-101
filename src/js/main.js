@@ -1,9 +1,10 @@
 import { Toolbar } from './components/Toolbar/Toolbar.js';
 import { ToggleButton } from './components/Toolbar/ToggleButton.js';
-import { Icons } from './components/Icons.js';
+import { EmptyState } from './components/EmptyState/EmptyState.js';
 
 // Create instances
 const toolbar = new Toolbar();
+const emptyState = new EmptyState();
 const toggleButton = new ToggleButton(() => {
     if (toolbar.container.innerHTML) {
         toolbar.hide();
@@ -21,3 +22,4 @@ document.addEventListener('keydown', (e) => {
 
 // Show toolbar initially
 toolbar.render();
+emptyState.render();

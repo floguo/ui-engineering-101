@@ -3,7 +3,7 @@ import { Icons } from '../Icons.js';
 
 export class Toolbar {
     constructor() {
-        this.container = document.getElementById('app');
+        this.container = document.getElementById('toolbar');
         this.buttons = [
             new ToolbarButton({ label: 'Crop', icon: Icons.crop }),
             new ToolbarButton({ label: 'Color', icon: Icons.color }),
